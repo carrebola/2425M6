@@ -1,0 +1,38 @@
+let entradaActual = ""; // Para almacenar el valor actual
+const pantalla = document.getElementById('pantalla'); // Referencia a la pantalla
+
+// Función para agregar un número o operador a la pantalla
+function agregarAPantalla(valor) {
+    entradaActual += valor;
+    pantalla.textContent = entradaActual;
+}
+
+// Agrega un event listener a cada botón de la calculadora
+document.getElementById('btn1').addEventListener('click', function() { agregarAPantalla('1'); });
+document.getElementById('btn2').addEventListener('click', function() { agregarAPantalla('2'); });
+document.getElementById('btn3').addEventListener('click', function() { agregarAPantalla('3'); });
+document.getElementById('btn4').addEventListener('click', function() { agregarAPantalla('4'); });
+document.getElementById('btn5').addEventListener('click', function() { agregarAPantalla('5'); });
+document.getElementById('btn6').addEventListener('click', function() { agregarAPantalla('6'); });
+document.getElementById('btn7').addEventListener('click', function() { agregarAPantalla('7'); });
+document.getElementById('btn8').addEventListener('click', function() { agregarAPantalla('8'); });
+document.getElementById('btn9').addEventListener('click', function() { agregarAPantalla('9'); });
+document.getElementById('btn0').addEventListener('click', function() { agregarAPantalla('0'); });
+
+// Agrega operadores
+document.getElementById('btnSuma').addEventListener('click', function() { agregarAPantalla('+'); });
+document.getElementById('btnResta').addEventListener('click', function() { agregarAPantalla('-'); });
+
+// Función para realizar el cálculo
+document.getElementById('btnIgual').addEventListener('click', function() {
+    if (entradaActual) {
+        entradaActual = eval(entradaActual); // Calcula el resultado
+        pantalla.textContent = entradaActual; // Muestra el resultado
+    }
+});
+
+// Función para limpiar la pantalla
+document.getElementById('btnBorrar').addEventListener('click', function() {
+    entradaActual = "";
+    pantalla.textContent = "0";
+});

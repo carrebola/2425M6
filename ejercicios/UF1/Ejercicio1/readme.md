@@ -1,11 +1,38 @@
-# Ejercicio 1 - Test de conceptos
+ let entradaActual = ""; // Para almacenar el valor actual
+    const pantalla = document.getElementById('pantalla'); // Referencia a la pantalla
 
-Crea una aplicación capaz de realizar preguntas tipo test a partir de una base de datos
-  [] Crea un array `bdPregutnas` de preguntas como el del modelo y muestralo por consola
-  [] Crea una array
+    // Función para agregar un número o operador a la pantalla
+    function agregarAPantalla(valor) {
+        entradaActual += valor;
+        pantalla.textContent = entradaActual;
+    }
 
-  [] Crea un 'listener' para cada uno de los botones correspondientes a las preguntas y muestra por consola el número de la pregunta seleccionada
+    // Agrega un event listener a cada botón de la calculadora
+    document.getElementById('btn1').addEventListener('click', function() { agregarAPantalla('1'); });
+    document.getElementById('btn2').addEventListener('click', function() { agregarAPantalla('2'); });
+    document.getElementById('btn3').addEventListener('click', function() { agregarAPantalla('3'); });
+    document.getElementById('btn4').addEventListener('click', function() { agregarAPantalla('4'); });
+    document.getElementById('btn5').addEventListener('click', function() { agregarAPantalla('5'); });
+    document.getElementById('btn6').addEventListener('click', function() { agregarAPantalla('6'); });
+    document.getElementById('btn7').addEventListener('click', function() { agregarAPantalla('7'); });
+    document.getElementById('btn8').addEventListener('click', function() { agregarAPantalla('8'); });
+    document.getElementById('btn9').addEventListener('click', function() { agregarAPantalla('9'); });
+    document.getElementById('btn0').addEventListener('click', function() { agregarAPantalla('0'); });
 
-  [] Crea una función `aleatorio()`que devuelve un número aleatório entre 1 y el número total de preguntas de la base de datos. 
-  [] Crea un 'listener' para el botón `nuevaPregunta` que llame a la función aleatorio() y guarde el resultado en una variable `preguntaActual` global
+    // Agrega operadores
+    document.getElementById('btnSuma').addEventListener('click', function() { agregarAPantalla('+'); });
+    document.getElementById('btnResta').addEventListener('click', function() { agregarAPantalla('-'); });
 
+    // Función para realizar el cálculo
+    document.getElementById('btnIgual').addEventListener('click', function() {
+        if (entradaActual) {
+            entradaActual = eval(entradaActual); // Calcula el resultado
+            pantalla.textContent = entradaActual; // Muestra el resultado
+        }
+    });
+
+    // Función para limpiar la pantalla
+    document.getElementById('btnBorrar').addEventListener('click', function() {
+        entradaActual = "";
+        pantalla.textContent = "0";
+    });
