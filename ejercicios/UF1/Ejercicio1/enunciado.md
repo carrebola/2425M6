@@ -1,52 +1,168 @@
-# Resum Esquemàtic de la Pràctica de la Calculadora en JavaScript
 
-## 1. Estructura HTML
-- **Divs per pantalla**: Mostra els resultats i entrades de la calculadora.
-- **Botons numèrics i operadors**: Números del `0` al `9`, operadors `+`, `-`, `=`, i un botó `C` per esborrar.
+# Exercici 1 - Calculadora bàsica
 
----
+L'objectiu d'aquests exercicis és que vagis desenvolupant la funcionalitat d'una calculadora bàsica pas a pas, utilitzant JavaScript. A mesura que avancis, utilitzaràs console.log() per anar comprovant el funcionament del teu codi i resoldre possibles errors.
 
-## 2. JavaScript - Passos clau
-### 1. **Inicialització**:
-   - Càrrega de JavaScript amb `console.log("Calculadora inicialitzada!");` per confirmar que el codi funciona.
+![image](https://github.com/user-attachments/assets/576a35eb-949f-4478-bab1-8632a3013830)
 
-### 2. **Capturar clics en botons**:
-   - Ús de **`addEventListener()`** per gestionar esdeveniments de clic.
-   - Exemple: Captura del valor d'un botó i ús de `console.log()` per mostrar-lo a la consola.
 
-### 3. **Mostrar números a la pantalla**:
-   - Assignar el valor dels botons al `div` de la pantalla amb **`textContent`**.
-   - Concatenació de números amb una variable (`entradaActual`) per no sobreescriure els valors anteriors.
+## **Exercici 1: Configurar l'entorn**
+**Objectiu**: Configurar la base de la calculadora amb l'HTML i afegir l'estructura inicial en JavaScript.
 
-### 4. **Afegir operadors**:
-   - Els operadors `+` i `-` també s'afegeixen a la variable `entradaActual` i es mostren a la pantalla.
+Crea un fitxer HTML amb una secció div per mostrar el resultat (pantalla) i un altre div per col·locar els botons de la calculadora (números de 0 a 9, sumes i restes, i el botó "=").
 
-### 5. **Realitzar càlculs amb `eval()`**:
-   - Quan es prem el botó `=`, es realitza l'operació amb **`eval()`**.
-   - Es mostra el resultat a la pantalla i es fa una comprovació prèvia amb `console.log()` per verificar el resultat.
+Després, en el fitxer de JavaScript, afegeix aquest codi:
 
-### 6. **Netejar la pantalla**:
-   - Botó `C` per reiniciar la variable d'entrada i tornar a mostrar `0` a la pantalla.
+```javascript
+console.log("Calculadora inicialitzada!");
+```
 
-### 7. **Control d'errors**:
-   - Ús d'un bloc **`try-catch`** per gestionar operacions no vàlides.
-   - Mostrar missatge d'error a la consola i a la pantalla si es detecten errors en el càlcul.
 
----
+>[!NOTE]
+   >
+   >Aquest missatge apareixerà a la consola del navegador per confirmar que el JavaScript s'ha carregat correctament.
 
-## 3. Mètodes i Conceptes Usats
-- **`addEventListener()`**: Per capturar esdeveniments com clics.
-- **`textContent`**: Per mostrar contingut dins d'un element HTML.
-- **Variables**:
-  - **`entradaActual`**: Per emmagatzemar el valor actual de l'operació a mesura que es concatena.
-  - **`resultat`**: Per emmagatzemar i mostrar el resultat del càlcul.
-- **`eval()`**: Per executar la cadena com una expressió matemàtica.
-- **`try-catch`**: Per controlar errors d'execució en el càlcul.
+## **Exercici 2: Capturar clics en els botons**
+**Objectiu**: Fer que cada botó numèric mostri el seu valor a la consola quan es clica.
 
----
+Afegeix un addEventListener a cada botó dels números (0 a 9) per tal que quan es faci clic, es mostri el número a la consola.
 
-## 4. Testejar el codi amb `console.log()`
-- S'utilitza **`console.log()`** per verificar els valors intermedis i assegurar-se que el comportament del codi és l'esperat a cada pas (mostrant valors dels botons, resultat del càlcul, etc.).
+Utilitza console.log() dins de l'esdeveniment per imprimir el valor del botó a la consola.
 
----
+Codi suggerit:
 
+
+```javascript
+document.getElementById('btn1').addEventListener('click', function() {
+  console.log('1');
+});
+```
+
+
+
+>[!NOTE] Què s'espera obtenir: 
+  >Quan facis clic al botó "1", hauries de veure el número 1 a la consola del navegador.
+
+## Exercici 3: Mostrar números a la pantalla
+**Objectiu**: Fer que en lloc d'imprimir els números a la consola, es mostrin en un div de la pantalla de la calculadora.
+
+Crea un div a l'HTML amb un id="pantalla" on es mostrarà el número.
+
+Canvia la funció perquè, en comptes d'imprimir a la consola, el número es mostri dins del div.
+
+Codi suggerit:
+
+```javascript
+
+document.getElementById('btn1').addEventListener('click', function() {
+  document.getElementById('pantalla').textContent = '1';
+});
+```
+
+[!NOTE] 
+  >Què s'espera obtenir: 
+    >En fer clic a "1", el número 1 hauria d'aparèixer al div de la pantalla de la calculadora.
+
+## Exercici 4: Afegir números consecutius
+**Objectiu**: Fer que es puguin afegir números consecutius a la pantalla sense que es sobreescriguin.
+
+Modifica la funció perquè quan es prem un altre número, aquest s'afegisca a la pantalla, en lloc de substituir el número anterior.
+
+Utilitza la variable entradaActual per emmagatzemar els números i després mostrar-los.
+
+Codi suggerit:
+
+
+```javascript
+let entradaActual = '';
+
+document.getElementById('btn1').addEventListener('click', function() {
+  entradaActual += '1';
+  document.getElementById('pantalla').textContent = entradaActual;
+});
+```
+
+>[!NOTE] Què s'espera obtenir: 
+  >Ara, en prémer diversos botons numèrics, els números es concatenaran i es mostraran a la pantalla.
+
+## Exercici 5: Afegir operadors
+**Objectiu**: Permetre l'ús d'operadors com + i -.
+
+Fes que els botons + i - també afegeixin l'operador a la variable entradaActual.
+
+Mostra l'operació completa a la pantalla.
+
+Codi suggerit:
+
+```javascript
+document.getElementById('btnSuma').addEventListener('click', function() {
+  entradaActual += '+';
+  document.getElementById('pantalla').textContent = entradaActual;
+});
+```
+Què s'espera obtenir: Si prems 1 + 2, hauries de veure 1+2 a la pantalla de la calculadora.
+
+## Exercici 6: Realitzar el càlcul
+**Objectiu**: Fer que el botó = calculi el resultat i el mostri a la pantalla.
+
+Utilitza la funció eval() per fer el càlcul quan es prem =.
+
+Fes servir console.log() per mostrar a la consola el resultat abans de mostrar-lo a la pantalla, per assegurar-te que el càlcul és correcte.
+
+Codi suggerit:
+
+```javascript
+
+document.getElementById('btnIgual').addEventListener('click', function() {
+  const resultat = eval(entradaActual);
+  console.log('Resultat:', resultat); // Testeja el resultat a la consola
+  document.getElementById('pantalla').textContent = resultat;
+});
+```
+>[NOTE!] Què s'espera obtenir: 
+  >Quan es premin els botons 1 + 2 =, el resultat 3 apareixerà a la pantalla i a la consola.
+
+## Exercici 7: Netejar la pantalla
+**Objectiu**: Afegir la funcionalitat de netejar la pantalla amb el botó C.
+
+Crea la funció que reiniciï la variable entradaActual i faci que la pantalla torni a mostrar 0.
+Codi suggerit:
+
+```javascript
+
+document.getElementById('btnBorrar').addEventListener('click', function() {
+  entradaActual = '';
+  document.getElementById('pantalla').textContent = '0';
+});
+```
+
+>[NOTE!]Què s'espera obtenir: 
+  >En fer clic a C, la pantalla es buida i torna a mostrar 0.
+
+## Exercici 8: Control d'errors
+**Objectiu**: Afegir control d'errors per evitar que l'usuari introdueixi operacions no vàlides.
+
+Abans de fer el càlcul amb eval(), comprova que l'operació sigui vàlida.
+
+Per exemple, evita que hi hagi dos operadors consecutius o que es premi = sense cap número.
+
+Codi suggerit (control d'errors bàsic):
+
+```javascript
+
+document.getElementById('btnIgual').addEventListener('click', function() {
+  try {
+    if (entradaActual !== '') {
+      const resultat = eval(entradaActual);
+      document.getElementById('pantalla').textContent = resultat;
+    } else {
+      console.log('No hi ha res a calcular');
+    }
+  } catch (error) {
+    console.log('Error en l\'operació:', error);
+    document.getElementById('pantalla').textContent = 'Error';
+  }
+});
+```
+>[NOTE!]Què s'espera obtenir: 
+>Si hi ha un error en l'operació, es mostra un missatge d'error a la pantalla.
