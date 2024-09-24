@@ -1,37 +1,6 @@
 console.log('Sesión 4');
 
-const alumnes = [
-  {
-    nom: "Joan Pérez",
-    edat: 18,
-    correu: "joan.perez@example.com",
-    moduls: [
-      { nom: "Desenvolupament Web", nota: 8.5 },
-      { nom: "Bases de Dades", nota: 7.0 },
-      { nom: "Sistemes Operatius", nota: 6.5 }
-    ]
-  },
-  {
-    nom: "Maria Sánchez",
-    edat: 19,
-    correu: "maria.sanchez@example.com",
-    moduls: [
-      { nom: "Desenvolupament Web", nota: 9.0 },
-      { nom: "Bases de Dades", nota: 8.0 },
-      { nom: "Sistemes Operatius", nota: 7.5 }
-    ]
-  },
-  {
-    nom: "Pere Martínez",
-    edat: 20,
-    correu: "pere.martinez@example.com",
-    moduls: [
-      { nom: "Desenvolupament Web", nota: 7.5 },
-      { nom: "Bases de Dades", nota: 6.0 },
-      { nom: "Sistemes Operatius", nota: 8.0 }
-    ]
-  }
-];
+
 
 // array
 const frutas = ['pera', 'manzana', 'plátano', 9, 32, "34"]
@@ -71,3 +40,62 @@ const arrayPersonas = [
 ]
 
 console.log(arrayPersonas[2].nombre);
+
+
+const alumnes = [
+  {
+    nom: "Joan Pérez",
+    edat: 18,
+    correu: "joan.perez@example.com",
+    moduls: [
+      { nom: "Desenvolupament Web", nota: 8.5 },
+      { nom: "Bases de Dades", nota: 7.0 },
+      { nom: "Sistemes Operatius", nota: 6.5 }
+    ]
+  },
+  {
+    nom: "Maria Sánchez",
+    edat: 19,
+    correu: "maria.sanchez@example.com",
+    moduls: [
+      { nom: "Desenvolupament Web", nota: 9.0 },
+      { nom: "Bases de Dades", nota: 8.0 },
+      { nom: "Sistemes Operatius", nota: 7.5 }
+    ]
+  },
+  {
+    nom: "Pere Martínez",
+    edat: 20,
+    correu: "pere.martinez@example.com",
+    moduls: [
+      { nom: "Desenvolupament Web", nota: 7.5 },
+      { nom: "Bases de Dades", nota: 6.0 },
+      { nom: "Sistemes Operatius", nota: 8.0 }
+    ]
+  }
+];
+
+console.log('La nota de sistemas operativos de María Sanchez es: '); // 7.5
+console.log('Nombre del segundo módulo de Pere'); // Bases de Dades
+
+// Recorres elementos de un array con for
+
+for(let i=0;i<arrayPersonas.length;i++){
+  console.log('nombre de ',i,alumnes[i].nom);
+}
+
+// Generando html a partir de un array
+// Cremos lista desordenada con los nombres de los alumnos
+// <ul><li>joan</li><li>Maria</li><li>Pere</li></ul>
+
+let listaHtml = '<ul>'
+
+for(let i=0;i<arrayPersonas.length;i++){
+  listaHtml += `
+    <li> ${arrayPersonas[i].nombre} </li>
+  `
+}
+
+listaHtml += '</ul>'
+
+document.querySelector('#miLista').innerHTML = listaHtml;
