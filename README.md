@@ -1,7 +1,8 @@
 # M6 
 ## Sesiones
 - [x] Sesión 0 : Entorno de desarrollo
-- [ ] Sesión 1 : Primeros scripts
+- [x] Sesión 1 : Primeros scripts
 ## Ejercicios
-  - Ejercicio1:
-  - Ejercicio2: 
+  - Exercici 1 - Calculadora bàsica
+  - Exercici 2 - Quiz de Preguntes
+  - Exercici 3 - Joc de Preguntes
