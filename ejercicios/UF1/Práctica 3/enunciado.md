@@ -94,7 +94,6 @@ L'objectiu d'aquest exercici és estendre el teu quiz interactiu afegint un joc 
   - `mouJugador(endavant)`: Avança o retrocedeix el jugador i actualitza encerts/errors.
   - `comprovaFinalJoc()`: Comprova si el jugador ha arribat a la casella final i acaba el joc.
 
->[!NOTE]
-   >**Què s'espera obtenir**: En finalitzar el joc, el jugador haurà avançat o retrocedit pel tauler, i s'haurà mostrat el nombre d'encerts i errors en arribar a la casella 20.
+
 
 
