@@ -102,7 +102,9 @@ document.getElementById('btnSuma').addEventListener('click', function() {
   document.getElementById('pantalla').textContent = entradaActual;
 });
 ```
-Què s'espera obtenir: Si prems 1 + 2, hauries de veure 1+2 a la pantalla de la calculadora.
+>[NOTE!]
+>Què s'espera obtenir: 
+  >Si prems 1 + 2, hauries de veure 1+2 a la pantalla de la calculadora.
 
 ## Exercici 6: Realitzar el càlcul
 **Objectiu**: Fer que el botó = calculi el resultat i el mostri a la pantalla.
