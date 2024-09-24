@@ -1,4 +1,4 @@
-# Exercici 1 - Quiz de Preguntes
+# Exercici 2 - Quiz de Preguntes
 
 L'objectiu d'aquests exercicis és que vagis desenvolupant un quiz interactiu pas a pas, utilitzant HTML i JavaScript. A mesura que avancis, utilitzaràs console.log() per comprovar el funcionament del teu codi i resoldre possibles errors.
 
