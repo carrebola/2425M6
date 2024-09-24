@@ -82,9 +82,8 @@ document.getElementById('btn1').addEventListener('click', function() {
   document.getElementById('pantalla').textContent = entradaActual;
 });
 ```
-
 >[!NOTE] 
->Què s'espera obtenir: 
+  >Què s'espera obtenir: 
   >Ara, en prémer diversos botons numèrics, els números es concatenaran i es mostraran a la pantalla.
 
 ## Exercici 5: Afegir operadors
@@ -102,8 +101,9 @@ document.getElementById('btnSuma').addEventListener('click', function() {
   document.getElementById('pantalla').textContent = entradaActual;
 });
 ```
->[NOTE!]
->Què s'espera obtenir: 
+
+>[!NOTE] 
+  >Què s'espera obtenir: 
   >Si prems 1 + 2, hauries de veure 1+2 a la pantalla de la calculadora.
 
 ## Exercici 6: Realitzar el càlcul
@@ -123,8 +123,8 @@ document.getElementById('btnIgual').addEventListener('click', function() {
   document.getElementById('pantalla').textContent = resultat;
 });
 ```
->[NOTE!] 
->Què s'espera obtenir: 
+>[!NOTE] 
+  >Què s'espera obtenir: 
   >Quan es premin els botons 1 + 2 =, el resultat 3 apareixerà a la pantalla i a la consola.
 
 ## Exercici 7: Netejar la pantalla
@@ -141,8 +141,8 @@ document.getElementById('btnBorrar').addEventListener('click', function() {
 });
 ```
 
->[NOTE!]
->Què s'espera obtenir: 
+>[!NOTE] 
+  >Què s'espera obtenir: 
   >En fer clic a C, la pantalla es buida i torna a mostrar 0.
 
 ## Exercici 8: Control d'errors
@@ -170,6 +170,6 @@ document.getElementById('btnIgual').addEventListener('click', function() {
   }
 });
 ```
->[NOTE!]
->Què s'espera obtenir: 
->Si hi ha un error en l'operació, es mostra un missatge d'error a la pantalla.
+>[!NOTE] 
+  >Què s'espera obtenir: 
+    >Si hi ha un error en l'operació, es mostra un missatge d'error a la pantalla.
