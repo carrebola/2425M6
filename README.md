@@ -3,7 +3,7 @@
 - [x] Sesió 0 : Entorno de desarrollo
 - [x] Sesió 1 : Primeros scripts
 - [x] Sesió 3 : Seleccionar elementos del DOM, modificar contenido y observar eventos
-- [ ] Sesió 4 : Arrays. Acceso mediante bucles.
+- [x] Sesió 4 : Arrays. Acceso mediante bucles.
 - [ ] Sesió 5 : Acceso y actualización de clases, estilos y atributos 
 - [ ] Sesió 6 : Almacenamiento local
 
