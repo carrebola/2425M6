@@ -88,3 +88,22 @@
    }
    ```
    Aquí es comprova si la variable `missatge` està buida i es mostra un missatge d'error si és el cas.
+
+9. **Mostrar i ocultar el div amb la informació de error:**
+```
+document.getElementById("result").style.display = "block";
+```
+- Ocultar el div:
+```
+document.getElementById("result").style.display = "none";
+```
+- Alternar visibilitat:
+```
+const resultDiv = document.getElementById("result");
+
+if (resultDiv.style.display === "none") {
+    resultDiv.style.display = "block";
+} else {
+    resultDiv.style.display = "none";
+}
+```
