@@ -1,11 +1,11 @@
 # M6 
 ## Sesions
-- [x] Sesió 0 : Entorno de desarrollo
-- [x] Sesió 1 : Primeros scripts
-- [x] Sesió 3 : Seleccionar elementos del DOM, modificar contenido y observar eventos
-- [x] Sesió 4 : Arrays. Acceso mediante bucles.
-- [ ] Sesió 5 : Acceso y actualización de clases, estilos y atributos 
-- [ ] Sesió 6 : Almacenamiento local
+- [x] Sesión 0 : Entorno de desarrollo
+- [x] Sesión 1 : Primeros scripts
+- [x] Sesión 3 : Seleccionar elementos del DOM, modificar contenido y observar eventos
+- [x] Sesión 4 : Arrays. Acceso mediante bucles.
+- [ ] Sesión 5 : Acceso y actualización de clases, estilos y atributos 
+- [ ] Sesión 6 : Objetos nativos JS (Math, String, Date, ...)
 
 ## Exercicis
   - Pràctica 1 - Calculadora bàsica
