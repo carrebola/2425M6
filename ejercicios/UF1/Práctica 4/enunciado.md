@@ -1,4 +1,4 @@
-# Exercici 2 - Fitxa
+# Pràctica 4 - Fitxa
 
 A partir dels arxius d’aquesta carpeta, crea l’script necessari per implementar la següent funcionalitat:
 - En prémer el botó 'Crear Fitxa' les dades del formulari s’han de mostrar a la fitxa de la columna de la dreta.
