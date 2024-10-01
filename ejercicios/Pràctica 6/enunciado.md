@@ -1,5 +1,7 @@
 # Exercici 4 - Math i String
 
+![image](https://github.com/user-attachments/assets/e62f5da9-6001-45eb-ab27-ed479b909c60)
+
 ## Exercici 4.1 - Aleatori
 Crea una funció que rebi el número inicial i final i ens torni un número aleatori entre aquests dos valors.
 
