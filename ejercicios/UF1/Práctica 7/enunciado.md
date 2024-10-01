@@ -5,4 +5,4 @@ El objetivo es crear un juego donde dos fichas (como las del parchis) recorren u
 3. Si una ficha cae en la posición de su compañera, esta volverá a la casilla de salida.
 4. Si una ficha llega al final se acaba la partida
 
-5. ![image](https://github.com/carrebola/m6/assets/61465929/ffc5a2f7-c596-465a-82ab-592e187df315)
+![image](https://github.com/user-attachments/assets/e0210b92-592d-4851-8a46-39200ab4b08b)
