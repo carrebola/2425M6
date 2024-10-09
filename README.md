@@ -1,5 +1,5 @@
 # M6 
-## Sesions
+## Sessions
 - [x] Sesión 0 : Entorno de desarrollo
 - [x] Sesión 1 : Primeros scripts
 - [x] Sesión 3 : Seleccionar elementos del DOM, modificar contenido y observar eventos
