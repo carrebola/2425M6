@@ -4,7 +4,7 @@
 - [x] Sesión 1 : Primeros scripts
 - [x] Sesión 3 : Seleccionar elementos del DOM, modificar contenido y observar eventos
 - [x] Sesión 4 : Arrays. Acceso mediante bucles.
-- [ ] Sesión 5 : Acceso y actualización del DOM (clases, estilos y atributos)
+- [x] Sesión 5 : Acceso y actualización del DOM (clases, estilos y atributos)
 - [ ] Sesión 6 : Objetos nativos JS (Math, String, Date, ...)
 
 ## Exercicis
