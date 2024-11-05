@@ -1,11 +1,11 @@
-# M6 
+# M6 UF1
 ## Sessions
 - [x] Sesión 0 : Entorno de desarrollo
 - [x] Sesión 1 : Primeros scripts
 - [x] Sesión 3 : Seleccionar elementos del DOM, modificar contenido y observar eventos
 - [x] Sesión 4 : Arrays. Acceso mediante bucles.
 - [x] Sesión 5 : Acceso y actualización del DOM (clases, estilos y atributos)
-- [ ] Sesión 6 : Objetos nativos JS (Math, String, Date, ...)
+- [x] Sesión 6 : Objetos nativos JS (Math, String, ...)
 
 ## Exercicis
   - Pràctica 1 - Calculadora bàsica
