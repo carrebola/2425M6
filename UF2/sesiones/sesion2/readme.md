@@ -16,7 +16,7 @@
 8. Página partidas:
    
 ## Tasca 1: Prototipo
-- Utilitza el prototip adjunt per la vista partidas. Crea les funcions **pintaTabla()**. Aquesta ha d’injectar el codi html corresponent al div que conté la taula del prototip en la etiqueta `<div id=”partidas”>` respectivament.
+- **pintaTabla()**. Aquesta ha d’injectar el codi html corresponent al div que conté la taula del prototip en la etiqueta `<div id=”partidas”>` respectivament.
 
 ## Tasca 2: Generant taula a partir d’un array de dades
 - Crea un array amb nom partidas amb dades inventades de partides (en format json):
