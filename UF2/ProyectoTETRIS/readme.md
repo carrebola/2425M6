@@ -23,6 +23,13 @@
     - [Historia de Usuario 4: Creación de la Estructura Básica del Juego 🎮](#historia-de-usuario-4-creación-de-la-estructura-básica-del-juego-)
       - [Criterios de Aceptación ✅](#criterios-de-aceptación--3)
       - [Tareas 📌](#tareas--3)
+        - [**Tarea 1**:](#tarea-1)
+        - [**Tarea 2**: Componente `panel.jsx`](#tarea-2-componente-paneljsx)
+        - [**Tarea 5**: Componente `pieza.jsx`](#tarea-5-componente-piezajsx)
+        - [**Tarea 6**: Función `colorPieza()`](#tarea-6-función-colorpieza)
+        - [**Tarea 7**: Clase `modeloPieza`](#tarea-7-clase-modelopieza)
+        - [**Tarea 8**: Función `nuevaPieza()`](#tarea-8-función-nuevapieza)
+        - [**Tarea 9:**: Función `InsertaNuevaPieza()`](#tarea-9-función-insertanuevapieza)
       - [Control de Versiones 🗂️](#control-de-versiones-️-3)
     - [Historia de Usuario 5: Control de Movimientos e Inicio del Juego 🎯](#historia-de-usuario-5-control-de-movimientos-e-inicio-del-juego-)
       - [Criterios de Aceptación ✅](#criterios-de-aceptación--4)
@@ -94,7 +101,7 @@ Este proyecto no solo busca que los estudiantes desarrollen una aplicación func
 
 ### Historia de Usuario 1: Configuración Inicial del Proyecto 🛠️
 
-> *Como desarrollador, quiero crear una aplicación con React utilizando Vite, Bootstrap, configurar el linter ESLint con Standard, GitHub y desplegarla en Vercel, para establecer una base sólida para el desarrollo del proyecto.*
+> _Como desarrollador, quiero crear una aplicación con React utilizando Vite, Bootstrap, configurar el linter ESLint con Standard, GitHub y desplegarla en Vercel, para establecer una base sólida para el desarrollo del proyecto._
 
 #### Criterios de Aceptación ✅
 
@@ -117,19 +124,19 @@ Este proyecto no solo busca que los estudiantes desarrollen una aplicación func
 
 - **Rama Git**: `historia-usuario-1-configuracion-inicial`
 - **Commits**:
-  - *Tarea 1*: `Configura entorno de desarrollo con Node.js`
-  - *Tarea 2*: `Crea aplicación React con Vite`
-  - *Tarea 3*: `Integra Bootstrap en el proyecto`
-  - *Tarea 4*: `Configura ESLint con Standard`
-  - *Tarea 5*: `Inicia repositorio GitHub y sube el proyecto`
-  - *Tarea 6*: `Configura despliegue continuo en Vercel`
+  - _Tarea 1_: `Configura entorno de desarrollo con Node.js`
+  - _Tarea 2_: `Crea aplicación React con Vite`
+  - _Tarea 3_: `Integra Bootstrap en el proyecto`
+  - _Tarea 4_: `Configura ESLint con Standard`
+  - _Tarea 5_: `Inicia repositorio GitHub y sube el proyecto`
+  - _Tarea 6_: `Configura despliegue continuo en Vercel`
 - **Pull Request**: Al finalizar la historia, crear un pull request para fusionar `historia-usuario-1-configuracion-inicial` con `main`.
 
 ---
 
 ### Historia de Usuario 2: Implementación de la Vista Partidas 📋
 
-> *Como desarrollador, quiero crear la vista **Partidas** que muestre una tabla con las partidas jugadas, y que permita ordenar la tabla según las columnas, para facilitar la visualización de los datos de las partidas.*
+> _Como desarrollador, quiero crear la vista **Partidas** que muestre una tabla con las partidas jugadas, y que permita ordenar la tabla según las columnas, para facilitar la visualización de los datos de las partidas._
 
 #### Criterios de Aceptación ✅
 
@@ -149,18 +156,18 @@ Este proyecto no solo busca que los estudiantes desarrollen una aplicación func
 
 - **Rama Git**: `historia-usuario-2-vista-partidas`
 - **Commits**:
-  - *Tarea 1*: `Crea componente de tabla para partidas`
-  - *Tarea 2*: `Define array de partidas con datos de prueba`
-  - *Tarea 3*: `Implementa ordenación por columnas en la tabla`
-  - *Tarea 4*: `Añade botón y modal para agregar nuevas partidas`
-  - *Tarea 5*: `Actualiza array de partidas con nuevas entradas`
+  - _Tarea 1_: `Crea componente de tabla para partidas`
+  - _Tarea 2_: `Define array de partidas con datos de prueba`
+  - _Tarea 3_: `Implementa ordenación por columnas en la tabla`
+  - _Tarea 4_: `Añade botón y modal para agregar nuevas partidas`
+  - _Tarea 5_: `Actualiza array de partidas con nuevas entradas`
 - **Pull Request**: Al finalizar la historia, crear un pull request para fusionar `historia-usuario-2-vista-partidas` con `main`.
 
 ---
 
 ### Historia de Usuario 3: Creación de las Vistas del Juego 🖥️
 
-> *Como desarrollador, quiero crear diversas vistas para la aplicación (Inicio, Juego, Partidas, Ranking) y utilizar React Router para gestionar la navegación, para proporcionar una interfaz clara y fácil de navegar para los usuarios.*
+> _Como desarrollador, quiero crear diversas vistas para la aplicación (Inicio, Juego, Partidas, Ranking) y utilizar React Router para gestionar la navegación, para proporcionar una interfaz clara y fácil de navegar para los usuarios._
 
 #### Criterios de Aceptación ✅
 
@@ -184,56 +191,127 @@ Este proyecto no solo busca que los estudiantes desarrollen una aplicación func
 
 - **Rama Git**: `historia-usuario-3-vistas-juego`
 - **Commits**:
-  - *Tarea 1*: `Instala React Router`
-  - *Tarea 2*: `Crea componente para la vista Inicio`
-  - *Tarea 3*: `Crea componente para la vista Juego`
-  - *Tarea 4*: `Reutiliza componente de tabla para Partidas`
-  - *Tarea 5*: `Crea componente para la vista Ranking`
-  - *Tarea 6*: `Configura rutas con React Router`
-  - *Tarea 7*: `Añade menú de navegación`
+  - _Tarea 1_: `Instala React Router`
+  - _Tarea 2_: `Crea componente para la vista Inicio`
+  - _Tarea 3_: `Crea componente para la vista Juego`
+  - _Tarea 4_: `Reutiliza componente de tabla para Partidas`
+  - _Tarea 5_: `Crea componente para la vista Ranking`
+  - _Tarea 6_: `Configura rutas con React Router`
+  - _Tarea 7_: `Añade menú de navegación`
 - **Pull Request**: Al finalizar la historia, crear un pull request para fusionar `historia-usuario-3-vistas-juego` con `main`.
 
 ---
 
 ### Historia de Usuario 4: Creación de la Estructura Básica del Juego 🎮
 
-> *Como desarrollador, quiero crear la estructura básica del juego utilizando objetos y clases para garantizar una arquitectura clara y escalable, para facilitar el desarrollo y el mantenimiento del proyecto.*
+> _Como desarrollador, quiero crear la estructura básica del juego utilizando objetos y clases para garantizar una arquitectura clara y escalable, para facilitar el desarrollo y el mantenimiento del proyecto._
 
 #### Criterios de Aceptación ✅
 
-- **models.js**: Crear y exportar un array `models` con todos los modelos de piezas y sus variantes.
-- **panel.js**: Crear y exportar un objeto `panel` como elemento principal del juego.
-- **Propiedad panel.matriz**: Definir el array de 22 x 12 que representa el panel de juego.
+- **modelos.js**: Crear y exportar un objeto `modelos` con todos los modelos de piezas y sus variantes de posición y de la matriz principal.
 - **Clase ModeloPieza()**: Crear la clase para las piezas del juego.
 
 #### Tareas 📌
 
-- **Tarea 1**: Definir el array `models` con las piezas del Tetris.
-- **Tarea 2**: Crear el objeto `panel` con las propiedades y métodos necesarios.
-- **Tarea 3**: Definir la propiedad `panel.matriz` con las dimensiones y valores especificados.
-- **Tarea 4**: Implementar la clase `ModeloPieza` con sus propiedades y métodos.
-- **Tarea 5**: Desarrollar el método `panel.crearNuevaPieza()`.
-- **Tarea 6**: Añadir la propiedad `panel.nuevaPieza` y el método `panel.insertarPieza()`.
-- **Tarea 7**: Crear el script principal del juego para integrar todos los componentes.
+##### **Tarea 1**: 
+Crea una carpeta `lib` para almacenar funciones, clases, etc.
+Crea, en `lib` ,  un archivo `modelos.js`. Define y exporta el objeto `modelos` con las piezas del Tetris y la matriz principal.
 
+```javascript
+
+modelos = {
+  matriz: [
+    [1,0,0,0,0,0,0,0,0,0,0,1],
+    [1,0,0,0,0,0,0,0,0,0,0,1],
+    ...
+    [1,1,1,1,1,1,1,1,1,1,1,1]
+  ],
+  piezas: [
+
+    {
+      nombre: "Ele",
+      matriz: [
+      [
+        [2, 0],
+        [2, 0],
+        [2, 2],
+      ],
+      [
+        [2, 2, 2],
+        [2, 0, 0],
+      ],
+      [
+        [2, 2],
+        [0, 2],
+        [0, 2],
+      ],
+      [
+        [0, 0, 2],
+        [2, 2, 2],
+      ],
+    },
+    {},
+    {}
+    ...
+    ]
+}
+```
+
+##### **Tarea 2**: Componente `panel.jsx`
+- Enla carpeta `componentes` crea y exporta el componente `panel.jsx`. Este componente recibe como prop un array de dos dimensiones de 22 filas y 12 columnas y renderiza el panel principal.
+
+- Crea, en la vista juego, un estado `arrayCasillas` e inicialízalo con un array multidimensional corresondiente a la matriz principal que tienes en modelos.
+
+- Inserta el componente `panel` y utiliza como prop el estado.
+
+##### **Tarea 5**: Componente `pieza.jsx`
+- Crea un componente `pieza.jsx` clonando el componente panel. Este lo utilizaremos para mostrar las piezas del modelo. 
+- Insértalo en la vista del juego utilizando como prop las diferentes matrices de cada pieza y sus variantes de posición. Comprueba que todas las piezas se muestran correctamente.
+
+##### **Tarea 6**: Función `colorPieza()`
+- Crea en la carpeta `lib` una función que recibe un número (0,1,2,3,...)
+y devuelve un texto correspondiente a los diferentes colores de fondo de bootstrap "bg-white", "bg-black", "bg-primary", "bg-secondary", etc.
+
+- Utiliza esta función en los componentes `panel` y `pieza` para mostrar las piezas en diferentes colores.
+  
+
+![alt text](image.png)
+
+
+##### **Tarea 7**: Clase `modeloPieza`
+- Crea, en lib, la clase `modeloPieza`. Esta clase esta formada por:
+  - propiedades: numero, nombre, angulo, matriz. (Todas propiedades públicas).
+    - La propiedad numero contiene el numero de la pieza
+    - La propiedad nombre guarda el nombre de la pieza, 
+    - La propiedad angulo será un número (0,1,2,3) correspondiente a los ángulos 0º, 90º, 180º,270º.
+    - La propiedad matriz tendrá asignada la matriz de `modelos`correspondiente al número de pieza y su posición.
+  - método girar()
+    - Este método permite incrementar angulo de uno en uno (de 90º en 90º) controlando que el valor solo tenga los valores 0,1,2 y 3.
+
+##### **Tarea 8**: Función `nuevaPieza()`
+- Crea la función `nuevaPieza` la cual devuelve una instancia de la clase pieza donde el número de la pieza será aleatorios y el ángulo será 0.
+- Inserta varios componentes `pieza`donde la matriz que reciban como prop corresponda a la matriz de diferentes instancias creadas a través de la función nuevaPieza. Comprueba que son piezas aleatorias en posiciones aleatorias.
+  
+![alt text](image-1.png)
+
+##### **Tarea 9:**: Función `InsertaNuevaPieza()`
+- Crea un estado `piezaActual` e inicializalo con una instancia obtenida de la función nuevaPieza().
+- Crea una función capaz de insertar en una columna aleatoria (la fila será siempre 0) del panel la matriz de la nueva pieza instanciada
+- Crea un botón para probar la función. Al hacer click llamara a la función apareciendo la nueva pieza en el panel.
+
+ ![alt text](image-2.png)
+  
 #### Control de Versiones 🗂️
+Rama: historia-usuario-4-estructura-basica
+Commits: Un commit por tarea.
+Pull Request al finalizar la historia.
 
-- **Rama Git**: `historia-usuario-4-estructura-juego`
-- **Commits**:
-  - *Tarea 1*: `Define array de modelos de piezas`
-  - *Tarea 2*: `Crea objeto panel con propiedades y métodos`
-  - *Tarea 3*: `Define panel.matriz con dimensiones y valores`
-  - *Tarea 4*: `Implementa clase ModeloPieza`
-  - *Tarea 5*: `Desarrolla método panel.crearNuevaPieza()`
-  - *Tarea 6*: `Añade panel.nuevaPieza y método panel.insertarPieza()`
-  - *Tarea 7*: `Integra componentes en el script principal del juego`
-- **Pull Request**: Al finalizar la historia, crear un pull request para fusionar `historia-usuario-4-estructura-juego` con `main`.
 
 ---
 
 ### Historia de Usuario 5: Control de Movimientos e Inicio del Juego 🎯
 
-> *Como desarrollador, quiero implementar el control de las teclas y los movimientos de las piezas, así como el mecanismo para iniciar el juego, para proporcionar una experiencia de juego interactiva para los usuarios.*
+> _Como desarrollador, quiero implementar el control de las teclas y los movimientos de las piezas, así como el mecanismo para iniciar el juego, para proporcionar una experiencia de juego interactiva para los usuarios._
 
 #### Criterios de Aceptación ✅
 
@@ -255,18 +333,18 @@ Este proyecto no solo busca que los estudiantes desarrollen una aplicación func
 
 - **Rama Git**: `historia-usuario-5-control-movimientos`
 - **Commits**:
-  - *Tarea 1*: `Implementa panel.controlTeclas() y eventos de teclado`
-  - *Tarea 2*: `Desarrolla método panel.borrarPieza()`
-  - *Tarea 3*: `Implementa métodos de movimiento y giro`
-  - *Tarea 4*: `Crea panel.iniciarMovimiento() con setInterval`
-  - *Tarea 5*: `Configura botón JUGAR para iniciar el juego`
+  - _Tarea 1_: `Implementa panel.controlTeclas() y eventos de teclado`
+  - _Tarea 2_: `Desarrolla método panel.borrarPieza()`
+  - _Tarea 3_: `Implementa métodos de movimiento y giro`
+  - _Tarea 4_: `Crea panel.iniciarMovimiento() con setInterval`
+  - _Tarea 5_: `Configura botón JUGAR para iniciar el juego`
 - **Pull Request**: Al finalizar la historia, crear un pull request para fusionar `historia-usuario-5-control-movimientos` con `main`.
 
 ---
 
 ### Historia de Usuario 6: Puntuación, Guardado de Partida y Vista Ranking 🏆
 
-> *Como desarrollador, quiero implementar un sistema de puntuación que incremente los puntos según las acciones del usuario y permita guardar la partida cuando una pieza llega al suelo, para hacer el juego más competitivo y conservar los resultados de los jugadores.*
+> _Como desarrollador, quiero implementar un sistema de puntuación que incremente los puntos según las acciones del usuario y permita guardar la partida cuando una pieza llega al suelo, para hacer el juego más competitivo y conservar los resultados de los jugadores._
 
 #### Criterios de Aceptación ✅
 
@@ -274,8 +352,8 @@ Este proyecto no solo busca que los estudiantes desarrollen una aplicación func
   - Incrementar 10 puntos por movimiento a la derecha, izquierda o abajo.
   - Añadir 20 puntos cuando la pieza gira.
   - Añadir 50 puntos cuando la pieza llega al suelo.
-  
 - **Guardar Partida**:
+
   - Finalizar la partida cuando la pieza llega al suelo y mostrar la opción de guardado.
   - Utilizar el método `registraPartida()` para guardar la partida.
   - Utilizar el formulario de la vista **Partidas** para recopilar la información.
@@ -297,19 +375,19 @@ Este proyecto no solo busca que los estudiantes desarrollen una aplicación func
 
 - **Rama Git**: `historia-usuario-6-puntuacion-guardado`
 - **Commits**:
-  - *Tarea 1*: `Implementa sistema de puntuación`
-  - *Tarea 2*: `Modifica flujo para finalizar partida`
-  - *Tarea 3*: `Crea funcionalidad para guardar partida con registraPartida()`
-  - *Tarea 4*: `Reutiliza formulario de Partidas para guardar datos`
-  - *Tarea 5*: `Redirige a Partidas después de guardar`
-  - *Tarea 6*: `Desarrolla vista Ranking con mejores jugadores`
+  - _Tarea 1_: `Implementa sistema de puntuación`
+  - _Tarea 2_: `Modifica flujo para finalizar partida`
+  - _Tarea 3_: `Crea funcionalidad para guardar partida con registraPartida()`
+  - _Tarea 4_: `Reutiliza formulario de Partidas para guardar datos`
+  - _Tarea 5_: `Redirige a Partidas después de guardar`
+  - _Tarea 6_: `Desarrolla vista Ranking con mejores jugadores`
 - **Pull Request**: Al finalizar la historia, crear un pull request para fusionar `historia-usuario-6-puntuacion-guardado` con `main`.
 
 ---
 
 ### Historia de Usuario 7: Funcionalidades Avanzadas ✨
 
-> *Como usuario, quiero poder jugar una partida de Tetris con todas las funcionalidades propias del juego. Al terminar la partida, quiero poder guardar la información de la partida ingresando mi Nick.*
+> _Como usuario, quiero poder jugar una partida de Tetris con todas las funcionalidades propias del juego. Al terminar la partida, quiero poder guardar la información de la partida ingresando mi Nick._
 
 #### Criterios de Aceptación ✅
 
@@ -326,20 +404,19 @@ Este proyecto no solo busca que los estudiantes desarrollen una aplicación func
 
 - **Rama Git**: `historia-usuario-7-funcionalidades-avanzadas`
 - **Commits**:
-  - *Tarea 1*: `Implementa bloqueo de piezas en posición final`
-  - *Tarea 2*: `Genera nueva pieza cuando la actual se bloquea`
-  - *Tarea 3*: `Asigna colores diferentes a las piezas`
-  - *Tarea 4*: `Añade contador de líneas y puntos`
-  - *Tarea 5*: `Detecta final de la partida y muestra mensaje`
-  - *Tarea 6*: `Muestra piezas siguientes en panel lateral`
-  - *Tarea 7*: `Implementa cambio de pieza con pieza guardada`
-  - *Tarea 8*: `Incrementa nivel después de líneas eliminadas`
+  - _Tarea 1_: `Implementa bloqueo de piezas en posición final`
+  - _Tarea 2_: `Genera nueva pieza cuando la actual se bloquea`
+  - _Tarea 3_: `Asigna colores diferentes a las piezas`
+  - _Tarea 4_: `Añade contador de líneas y puntos`
+  - _Tarea 5_: `Detecta final de la partida y muestra mensaje`
+  - _Tarea 6_: `Muestra piezas siguientes en panel lateral`
+  - _Tarea 7_: `Implementa cambio de pieza con pieza guardada`
+  - _Tarea 8_: `Incrementa nivel después de líneas eliminadas`
 - **Pull Request**: Al finalizar la historia, crear un pull request para fusionar `historia-usuario-7-funcionalidades-avanzadas` con `main`.
 
 ---
 
 ## Planificación del Proyecto según Metodología Ágil 🗓️
-
 
 El proyecto se dividirá en **10 sprints** de **1 semana** cada uno, considerando que las clases son los **martes** (3 horas) y los **viernes** (2 horas), comenzando el **25 de noviembre de 2022**. Se han ajustado las fechas para respetar los festivos y vacaciones según el calendario escolar de Cataluña para centros de formación profesional.
 
@@ -380,7 +457,7 @@ El proyecto se dividirá en **10 sprints** de **1 semana** cada uno, considerand
 - **Historia de Usuario**: Historia 2 - Implementación de la Vista Partidas
 - **Tareas**:
   - Tarea 5: Actualizar array y re-renderizar tabla (1 h)
-  - Tarea 1: Instalar React Router (0.5 h) *(Historia 3)*
+  - Tarea 1: Instalar React Router (0.5 h) _(Historia 3)_
 - **Total estimado**: 1.5 horas
 
 **Nota**: El martes 6 de diciembre es festivo (Día de la Constitución), por lo que no hay clase.
@@ -483,7 +560,6 @@ El proyecto se dividirá en **10 sprints** de **1 semana** cada uno, considerand
 - **Total estimado**: 4 horas
 
 ---
-
 
 - **Control de Versiones**: Cada historia de usuario se desarrollará en una rama específica. Cada tarea completada debe tener un commit con un mensaje claro. Al finalizar cada historia, se debe crear un pull request para fusionar la rama con `main`.
 - **Flexibilidad**: Las estimaciones de tiempo son aproximadas y pueden ajustarse según el progreso de los estudiantes.
