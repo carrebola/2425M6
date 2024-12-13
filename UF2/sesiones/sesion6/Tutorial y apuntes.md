@@ -28,6 +28,7 @@ En este tutorial aprenderás a configurar y desarrollar una aplicación de una s
    6. [**Configurar React Router**](#6-configurar-react-router) 🚦
       - Instalación de React Router
       - Configuración de rutas y navegación
+      - [Teoría sobre React Router](#teoría-sobre-react-router)
    7. [**Crear las Vistas y Componentes**](#7-crear-las-vistas-y-componentes) 🖼️
       - Vista Home (Formulario para Usuario)
       - Vista Acerca de (Tarjetas de Personas)
@@ -283,6 +284,63 @@ El **Context** en React permite compartir datos entre componentes sin necesidad 
 
 ---
 
+#### Teoría sobre React Router
+
+React Router es una biblioteca utilizada para gestionar la navegación en aplicaciones React de manera declarativa. Permite crear rutas y asociarlas con componentes, ofreciendo una experiencia de navegación fluida y modular.
+
+##### Principales Conceptos:
+
+1. **BrowserRouter:** Actúa como el contenedor principal para la navegación basada en URL.
+
+   ```javascript
+   import { BrowserRouter } from 'react-router-dom';
+
+   <BrowserRouter>
+     {/* Rutas */}
+   </BrowserRouter>
+   ```
+
+2. **Routes y Route:** Se utilizan para definir las diferentes rutas de la aplicación y asociarlas con componentes específicos.
+
+   ```javascript
+   import { Routes, Route } from 'react-router-dom';
+
+   <Routes>
+     <Route path="/" element={<Home />} />
+     <Route path="/about" element={<About />} />
+   </Routes>
+   ```
+
+3. **Link:** Es un componente que permite la navegación entre rutas sin recargar la página.
+
+   ```javascript
+   import { Link } from 'react-router-dom';
+
+   <Link to="/about">Ir a Acerca de</Link>
+   ```
+
+4. **Navigate:** Permite redirigir programáticamente a otra ruta.
+
+   ```javascript
+   import { Navigate } from 'react-router-dom';
+
+   if (!usuarioAutenticado) {
+     return <Navigate to="/login" />;
+   }
+   ```
+
+5. **useParams:** Hook que devuelve los parámetros de la URL.
+
+   ```javascript
+   import { useParams } from 'react-router-dom';
+
+   const { id } = useParams();
+   ```
+
+Estos conceptos son fundamentales para implementar un enrutamiento completo en aplicaciones React.
+
+---
+
 #### 7. Crear las Vistas y Componentes
 
 1. **Vista Home (Formulario para Usuario):**
@@ -385,7 +443,5 @@ El **Context** en React permite compartir datos entre componentes sin necesidad 
    npm run dev
    ```
 
-2. Abre el navegador en `http://localhost:3000` para ver la aplicación funcionando.
-
----
+2. Abre el navegador en `http://localhost:3000` para ver la aplicación funcionando
 
