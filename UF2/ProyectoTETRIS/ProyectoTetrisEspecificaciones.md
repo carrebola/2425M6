@@ -272,20 +272,21 @@ y devuelve un texto correspondiente a los diferentes colores de fondo de bootstr
     - La propiedad 'numero' contiene el numero de la pieza
     - La propiedad 'nombre' guarda el nombre de la pieza, 
     - La propiedad 'angulo' será un número (0,1,2,3) correspondiente a los ángulos 0º, 90º, 180º,270º.
-    - La propiedad 'posicion' contendrá un numero aleatorio que indicará donde va a aparecer la pieza en nuestro panel. Por lo tanto, debe valer entre 1 y (11 - ancho de la pieza) para asegurar que no se sale del panel.
+    - La propiedad 'fila'
+    - La propiedad 'columna'
     - La propiedad 'matriz' contendrá un puntero que apuntará a al array correspondiente (según numero de pieza y angulo) de la propiedad `piezas` del objeto `modelos`.
   - método girar()
     - Este método permite sumar uno a la propiedad `angulo`, controlando que el valor solo tenga los valores 0,1,2 y 3.
 
 ##### **Tarea 8**: Función `nuevaPieza()`
-- Crea y exporta, en el archivo`lib`, la función `nuevaPieza` la cual devuelve una instancia de la clase pieza donde el número de la pieza será aleatorio y el ángulo será 0.
+- Crea y exporta, en el archivo`lib`, la función `nuevaPieza` la cual devuelve una instancia de la clase pieza donde el número de la pieza será aleatorio y el ángulo será 0, y la fila y columna se la pasaremos al crear la instancia.
   Por ejemplo:
   ```javascript
-  const pieza = nuevaPieza()
+  const pieza = nuevaPieza(2,4)
   console.log(pieza.numero) // 1 (un numero aleatorio, en este caso corresponde a la segunda pieza de modelos.piezas)
   console.log(pieza.nombre) // "L"
   console.log(pieza.angulo) // 0
-  console.log(pieza.posicion) // 8 (es la posición x en la que aparecería la pieza en nuestro panel)
+  console.log(pieza.fila, pieza.columna) // 2,4
   console.log(pieza.matriz) // [[3,0],[3,0],[3,3]]
   ```
    
@@ -294,9 +295,9 @@ y devuelve un texto correspondiente a los diferentes colores de fondo de bootstr
 ![alt text](image-1.png)
 
 ##### **Tarea 9:**: Función `insertaNuevaPieza()`
-- En la vista 'Juego', crea un estado `piezaActual` e inicialízalo con una instancia obtenida de la función `nuevaPieza()`.
-- Crea una función `insertaNuevaPieza()` capaz de insertar en una posición aleatoria del panel (es decir, en la fila 0 y la columna **nuevaPieza.posicion**) la matriz de la nueva pieza instanciada.
-- Crea un botón para probar la función. Al hacer click llamara a la función insertaNuevaPieza() de manera que se renderice panel ahora con la pieza insertada.
+- En la vista 'Juego', crea un estado `piezaActual` e inicialízalo con una instancia obtenida de la función `nuevaPieza()` donde la fila será 0 y la columna será un numero aleatorio.
+- Crea una función `insertaNuevaPieza()` capaz de insertar en el panel (es decir, en la fila 0 y la columna aleatoria) la matriz de la nueva pieza instanciada.
+- Crea un botón para probar la función. Al hacer click llamará a la función insertaNuevaPieza() de manera que se renderice el panel, ahora con la pieza insertada.
 
  ![alt text](image-2.png)
   
@@ -312,21 +313,32 @@ Pull Request al finalizar la historia.
 
 > _Como desarrollador, quiero implementar el control de las teclas y los movimientos de las piezas, así como el mecanismo para iniciar el juego, para proporcionar una experiencia de juego interactiva para los usuarios._
 
+**Planteamiento:**
+Para crear el movimiento (desplazamiento o giro) de las piezas, en primer lugar debemos crear una nueva pieza, guardarla en el estado e insertarla en el panel.
+Si ahora, por ejemplo, pulsamos la flecha ➡️ lo que debe suceder será:
+  1. Borrarse la pieza (para evitar estelas). Esto lo haremos con la función borrarPieza(fila, columna).
+  2. A continuación incrementaremos en 1 la propiedad columna
+  3. Comprobaremos que en la nueva posición no hay otra pieza o el muro del panel.
+  4. Insertaremos de nuevo la pieza en el panel.
+La función iniciarMovimiento creará un intervalo automático que llamará cada segundo a la función bajar() por lo que las piezas bajarán solas hasta colisionar con otra pieza o con el suelo del panel.
 #### Criterios de Aceptación ✅
 
-- **Método panel.controlTeclas()**: Detectar las teclas de movimiento y llamar a los métodos correspondientes.
-- **Método panel.borrarPieza()**: Borrar la pieza actual del panel antes de cada movimiento.
-- **Métodos de movimiento**: Implementar `panel.moverDra()`, `panel.moverIzq()`, `panel.bajar()` y `ModeloPieza.girar()`.
-- **Método panel.iniciarMovimiento()**: Gestionar el movimiento automático de las piezas.
-- **Inicio del Juego**: Activar el juego al pulsar el botón **JUGAR**.
+- **Función controlTeclas()**: Detectar las teclas de movimiento y llamar a los métodos correspondientes.
+- **Función borrarPieza()**: Borrar la pieza actual del panel antes de cada movimiento.
+- **Funciones de movimiento**: Implementar `moverDra()`, `moverIzq()`, `bajar()` y `ModeloPieza.girar()`.
+- **Función iniciarMovimiento()**: Gestionar el movimiento automático de las piezas.
+- **Funcion para Inicio del Juego**: Activar el juego al pulsar el botón **JUGAR**.
+- **Función hayColision()**: Comprueba si se puede mover la pieza o, si por el contrario, hay colisión con el muro u otra pieza.
 
 #### Tareas 📌
 
-- **Tarea 1**: Implementar el método `panel.controlTeclas()` y vincularlo a los eventos del teclado.
-- **Tarea 2**: Desarrollar el método `panel.borrarPieza()`.
-- **Tarea 3**: Implementar los métodos de movimiento y giro de las piezas.
-- **Tarea 4**: Crear el método `panel.iniciarMovimiento()` con `setInterval`.
+##### **Tarea 1: Función controlTeclas()**
+  - Implementa, en `Juego`, la función `controlTeclas()` la cual debe detectar la pulsación de las teclas y, dependiendo de la flecha pulsada, debe llamar a las funciones `moverDra()`, `moverIzq()`, `bajar()` y `ModeloPieza.girar()` que, por el momento, mostrarán por consola un mensaje.
+- **Tarea 2**: Desarrollar la función `borrarPieza(fila, columna)`.
+- **Tarea 3**: Actualizar las funciones de movimiento y giro de las piezas.
+- **Tarea 4**: Crear la función `iniciarMovimiento()` con `setInterval`.
 - **Tarea 5**: Configurar el botón **JUGAR** para iniciar el juego.
+- **Tarea 6**: Implementa `hayColision()`para que las piezas se detengan.
 
 #### Control de Versiones 🗂️
 
