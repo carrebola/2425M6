@@ -250,18 +250,16 @@ modelos = {
 ##### **Tarea 2**: Componente `panel.jsx`
 - Enla carpeta `componentes` crea y exporta el componente `panel.jsx`. Este componente recibe como prop un array de dos dimensiones de 22 filas y 12 columnas y renderiza el panel principal.
 
-- Crea, en la vista juego, un estado `arrayCasillas` e inicialízalo con un array multidimensional corresondiente a la matriz principal que tienes en modelos.
-
+- Crea, en la vista `Juego`, un estado `**arrayCasillas**` e inicialízalo con un array multidimensional corresondiente a la matriz principal que tienes en modelos.
 - Inserta el componente `panel` y utiliza como prop el estado.
 
 ##### **Tarea 5**: Componente `pieza.jsx`
 - Crea un componente `pieza.jsx` clonando el componente panel. Este lo utilizaremos para mostrar las piezas del modelo. 
-- Insértalo en la vista del juego utilizando como prop las diferentes matrices de cada pieza y sus variantes de posición. Comprueba que todas las piezas se muestran correctamente.
+- Insértalo en la vista `Juego` utilizando como prop alguna de las diferentes matrices de cada pieza de `modelos` y sus variantes de ángulo. Comprueba que todas las piezas se muestran correctamente.
 
 ##### **Tarea 6**: Función `colorPieza()`
 - Crea en la carpeta `lib` una función que recibe un número (0,1,2,3,...)
 y devuelve un texto correspondiente a los diferentes colores de fondo de bootstrap "bg-white", "bg-black", "bg-primary", "bg-secondary", etc.
-
 - Utiliza esta función en los componentes `panel` y `pieza` para mostrar las piezas en diferentes colores.
   
 
@@ -271,23 +269,34 @@ y devuelve un texto correspondiente a los diferentes colores de fondo de bootstr
 ##### **Tarea 7**: Clase `modeloPieza`
 - Crea, en lib, la clase `modeloPieza`. Esta clase esta formada por:
   - propiedades: numero, nombre, angulo, matriz. (Todas propiedades públicas).
-    - La propiedad numero contiene el numero de la pieza
-    - La propiedad nombre guarda el nombre de la pieza, 
-    - La propiedad angulo será un número (0,1,2,3) correspondiente a los ángulos 0º, 90º, 180º,270º.
-    - La propiedad matriz tendrá asignada la matriz de `modelos`correspondiente al número de pieza y su posición.
+    - La propiedad 'numero' contiene el numero de la pieza
+    - La propiedad 'nombre' guarda el nombre de la pieza, 
+    - La propiedad 'angulo' será un número (0,1,2,3) correspondiente a los ángulos 0º, 90º, 180º,270º.
+    - La propiedad 'posicion' contendrá un numero aleatorio que indicará donde va a aparecer la pieza en nuestro panel. Por lo tanto, debe valer entre 1 y (11 - ancho de la pieza) para asegurar que no se sale del panel.
+    - La propiedad 'matriz' contendrá un puntero que apuntará a al array correspondiente (según numero de pieza y angulo) de la propiedad `piezas` del objeto `modelos`.
   - método girar()
-    - Este método permite incrementar angulo de uno en uno (de 90º en 90º) controlando que el valor solo tenga los valores 0,1,2 y 3.
+    - Este método permite sumar uno a la propiedad `angulo`, controlando que el valor solo tenga los valores 0,1,2 y 3.
 
 ##### **Tarea 8**: Función `nuevaPieza()`
-- Crea la función `nuevaPieza` la cual devuelve una instancia de la clase pieza donde el número de la pieza será aleatorios y el ángulo será 0.
-- Inserta varios componentes `pieza`donde la matriz que reciban como prop corresponda a la matriz de diferentes instancias creadas a través de la función nuevaPieza. Comprueba que son piezas aleatorias en posiciones aleatorias.
+- Crea y exporta, en el archivo`lib`, la función `nuevaPieza` la cual devuelve una instancia de la clase pieza donde el número de la pieza será aleatorio y el ángulo será 0.
+  Por ejemplo:
+  ```javascript
+  const pieza = nuevaPieza()
+  console.log(pieza.numero) // 1 (un numero aleatorio, en este caso corresponde a la segunda pieza de modelos.piezas)
+  console.log(pieza.nombre) // "L"
+  console.log(pieza.angulo) // 0
+  console.log(pieza.posicion) // 8 (es la posición x en la que aparecería la pieza en nuestro panel)
+  console.log(pieza.matriz) // [[3,0],[3,0],[3,3]]
+  ```
+   
+- En la vista `Juego`, inserta varios componentes `Pieza` donde la matriz que reciban como prop ahora corresponda a la matriz de diferentes **instancias** de la clase **modeloPieza** creadas a través de la función **nuevaPieza()**. Comprueba que se muestran piezas aleatorias.
   
 ![alt text](image-1.png)
 
-##### **Tarea 9:**: Función `InsertaNuevaPieza()`
-- Crea un estado `piezaActual` e inicializalo con una instancia obtenida de la función nuevaPieza().
-- Crea una función capaz de insertar en una columna aleatoria (la fila será siempre 0) del panel la matriz de la nueva pieza instanciada
-- Crea un botón para probar la función. Al hacer click llamara a la función apareciendo la nueva pieza en el panel.
+##### **Tarea 9:**: Función `insertaNuevaPieza()`
+- En la vista 'Juego', crea un estado `piezaActual` e inicialízalo con una instancia obtenida de la función `nuevaPieza()`.
+- Crea una función `insertaNuevaPieza()` capaz de insertar en una posición aleatoria del panel (es decir, en la fila 0 y la columna **nuevaPieza.posicion**) la matriz de la nueva pieza instanciada.
+- Crea un botón para probar la función. Al hacer click llamara a la función insertaNuevaPieza() de manera que se renderice panel ahora con la pieza insertada.
 
  ![alt text](image-2.png)
   
