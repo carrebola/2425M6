@@ -180,58 +180,127 @@ Las props son esenciales para crear componentes reutilizables y dinámicos.
 
 #### 5. Utilizar React Context
 
-El **Context** en React permite compartir datos entre componentes sin necesidad de pasar props manualmente a través de cada nivel del árbol de componentes. Esto es útil para manejar datos globales como temas o configuraciones de usuario.
+**React Context** es una herramienta poderosa que permite compartir datos globales entre componentes de una aplicación React, sin necesidad de pasar props manualmente a través de cada nivel del árbol de componentes. Esto resulta especialmente útil para gestionar información como el tema de la aplicación, el usuario autenticado, o configuraciones globales.
 
-##### Configuración del Contexto:
+---
 
-1. **Crear un Contexto**:
+##### **Configuración del Contexto**
 
-   ```javascript
-   import React, { createContext } from 'react';
-   const UserContext = createContext();
-   export default UserContext;
-   ```
+###### **1. Crear un Contexto**
+Un **Contexto** actúa como un contenedor para los datos que deseas compartir. Para crearlo:
 
-2. **Proveer el Contexto**:
+```javascript
+import React, { createContext } from 'react';
 
-   ```javascript
-   import React, { useState } from 'react';
-   import UserContext from './UserContext';
+// Crear el contexto
+const UserContext = createContext();
 
-   const UserProvider = ({ children }) => {
-     const [usuario, setUsuario] = useState(null);
-     const [tema, setTema] = useState('claro');
+// Exportarlo para que otros archivos puedan utilizarlo
+export default UserContext;
+```
 
-     return (
-       <UserContext.Provider value={{ usuario, setUsuario, tema, setTema }}>
-         {children}
-       </UserContext.Provider>
-     );
-   };
+---
 
-   export default UserProvider;
-   ```
+###### **2. Proveer el Contexto**
+El **Proveedor** (`Provider`) es el componente que envuelve a los demás y permite que accedan a los datos compartidos. Aquí configuramos los estados globales que estarán disponibles en toda la aplicación:
 
-3. **Consumir el Contexto**:
+```javascript
+import React, { useState } from 'react';
+import UserContext from './UserContext';
 
-   ```javascript
-   import React, { useContext } from 'react';
-   import UserContext from './UserContext';
+const UserProvider = ({ children }) => {
+  // Declaración de estados globales
+  const [usuario, setUsuario] = useState(null); // Estado del usuario
+  const [tema, setTema] = useState('claro');   // Estado del tema
 
-   const MiComponente = () => {
-     const { usuario, setUsuario, tema } = useContext(UserContext);
+  return (
+    // Proveedor que pasa los estados y funciones a través de `value`
+    <UserContext.Provider value={{ usuario, setUsuario, tema, setTema }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
 
-     return (
-       <div>
-         <p>Tema actual: {tema}</p>
-         <p>Usuario actual: {usuario ? usuario.nombre : 'No hay usuario'}</p>
-         <button onClick={() => setUsuario({ nombre: 'Juan Pérez' })}>Iniciar Sesión</button>
-       </div>
-     );
-   };
+export default UserProvider;
+```
 
-   export default MiComponente;
-   ```
+###### **Explicación Conceptual:**
+- `UserContext.Provider` es un componente que envuelve otros componentes.
+- El objeto `value` contiene los datos y funciones que quieres compartir con los componentes hijos.
+- En este ejemplo, se comparten dos estados (`usuario` y `tema`) y las funciones para actualizarlos (`setUsuario` y `setTema`).
+
+---
+
+###### **3. Envolver la Aplicación con el Contexto**
+Para que los componentes de la aplicación accedan al contexto, necesitamos envolver la raíz de nuestra aplicación con el proveedor (`UserProvider`).
+
+```javascript
+// Archivo main.jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import UserProvider from './UserProvider'; // Importamos el proveedor
+
+ReactDOM.render(
+  <React.StrictMode>
+    <UserProvider>
+      <App />
+    </UserProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+---
+
+##### **Consumir el Contexto**
+
+Una vez configurado el contexto, podemos acceder a sus valores en cualquier componente utilizando el hook `useContext`. Esto simplifica el acceso a los datos globales sin necesidad de pasar props.
+
+```javascript
+import React, { useContext } from 'react';
+import UserContext from './UserContext';
+
+const MiComponente = () => {
+  // Accedemos a los datos y funciones del contexto
+  const { usuario, setUsuario, tema, setTema } = useContext(UserContext);
+
+  return (
+    <div>
+      <h1>Gestión del Contexto</h1>
+      <p>Tema actual: {tema}</p>
+      <p>Usuario actual: {usuario ? usuario.nombre : 'No hay usuario autenticado'}</p>
+
+      <button onClick={() => setUsuario({ nombre: 'Juan Pérez' })}>
+        Iniciar Sesión
+      </button>
+
+      <button onClick={() => setTema(tema === 'claro' ? 'oscuro' : 'claro')}>
+        Cambiar Tema
+      </button>
+    </div>
+  );
+};
+
+export default MiComponente;
+```
+
+###### **Explicación Conceptual:**
+1. **`useContext(UserContext)`**: Extrae los valores compartidos en el contexto.
+2. **Uso de estados y funciones globales:**
+   - `usuario`: Contiene los datos del usuario autenticado.
+   - `setUsuario`: Función para actualizar el estado del usuario.
+   - `tema`: Contiene el tema actual de la aplicación.
+   - `setTema`: Función para alternar entre temas claros y oscuros.
+
+---
+
+###### **Resumen**
+1. **Crear un contexto** con `createContext`.
+2. **Configurar un proveedor** que maneja los estados globales y los distribuye.
+3. **Envolver la aplicación** con el proveedor en el archivo principal.
+4. **Consumir el contexto** con `useContext` en los componentes necesarios.
+Esta estructura modular y escalable permite manejar datos globales eficientemente, reduciendo la necesidad de prop drilling (pasar props innecesariamente).
 
 ---
 
