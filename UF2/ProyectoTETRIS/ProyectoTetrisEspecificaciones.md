@@ -1,48 +1,5 @@
 # Proyecto Tetris: Especificaciones
 
-## Índice
-
-- [Proyecto Tetris: Especificaciones](#proyecto-tetris-especificaciones)
-  - [Índice](#índice)
-  - [Introducción](#introducción)
-    - [Conceptos y Tecnologías a Practicar](#conceptos-y-tecnologías-a-practicar)
-  - [Objetivo del Proyecto](#objetivo-del-proyecto)
-  - [Historias de Usuario](#historias-de-usuario)
-    - [Historia de Usuario 1: Configuración Inicial del Proyecto 🛠️](#historia-de-usuario-1-configuración-inicial-del-proyecto-️)
-      - [Criterios de Aceptación ✅](#criterios-de-aceptación-)
-      - [Tareas 📌](#tareas-)
-      - [Control de Versiones 🗂️](#control-de-versiones-️)
-    - [Historia de Usuario 2: Implementación de la Vista Partidas 📋](#historia-de-usuario-2-implementación-de-la-vista-partidas-)
-      - [Criterios de Aceptación ✅](#criterios-de-aceptación--1)
-      - [Tareas 📌](#tareas--1)
-      - [Control de Versiones 🗂️](#control-de-versiones-️-1)
-    - [Historia de Usuario 3: Creación de las Vistas del Juego 🖥️](#historia-de-usuario-3-creación-de-las-vistas-del-juego-️)
-      - [Criterios de Aceptación ✅](#criterios-de-aceptación--2)
-      - [Tareas 📌](#tareas--2)
-      - [Control de Versiones 🗂️](#control-de-versiones-️-2)
-    - [Historia de Usuario 4: Creación de la Estructura Básica del Juego 🎮](#historia-de-usuario-4-creación-de-la-estructura-básica-del-juego-)
-      - [Criterios de Aceptación ✅](#criterios-de-aceptación--3)
-      - [Tareas 📌](#tareas--3)
-        - [**Tarea 1**:](#tarea-1)
-        - [**Tarea 2**: Componente `panel.jsx`](#tarea-2-componente-paneljsx)
-        - [**Tarea 5**: Componente `pieza.jsx`](#tarea-5-componente-piezajsx)
-        - [**Tarea 6**: Función `colorPieza()`](#tarea-6-función-colorpieza)
-        - [**Tarea 7**: Clase `modeloPieza`](#tarea-7-clase-modelopieza)
-        - [**Tarea 8**: Función `nuevaPieza()`](#tarea-8-función-nuevapieza)
-        - [**Tarea 9:**: Función `InsertaNuevaPieza()`](#tarea-9-función-insertanuevapieza)
-      - [Control de Versiones 🗂️](#control-de-versiones-️-3)
-    - [Historia de Usuario 5: Control de Movimientos e Inicio del Juego 🎯](#historia-de-usuario-5-control-de-movimientos-e-inicio-del-juego-)
-      - [Criterios de Aceptación ✅](#criterios-de-aceptación--4)
-      - [Tareas 📌](#tareas--4)
-      - [Control de Versiones 🗂️](#control-de-versiones-️-4)
-    - [Historia de Usuario 6: Puntuación, Guardado de Partida y Vista Ranking 🏆](#historia-de-usuario-6-puntuación-guardado-de-partida-y-vista-ranking-)
-      - [Criterios de Aceptación ✅](#criterios-de-aceptación--5)
-      - [Tareas 📌](#tareas--5)
-      - [Control de Versiones 🗂️](#control-de-versiones-️-5)
-    - [Historia de Usuario 7: Funcionalidades Avanzadas ✨](#historia-de-usuario-7-funcionalidades-avanzadas-)
-      - [Criterios de Aceptación ✅](#criterios-de-aceptación--6)
-      - [Control de Versiones 🗂️](#control-de-versiones-️-6)
-
 
 ---
 
@@ -139,7 +96,7 @@ Este proyecto no solo busca que los estudiantes desarrollen una aplicación func
 - **Tarea 1**: Crear el componente de la tabla de partidas.
 - **Tarea 2**: Definir el array `partidas` con datos de prueba.
 - **Tarea 3**: Implementar la funcionalidad de ordenación por columnas.
-- **Tarea 4**: Añadir el botón para agregar una nueva partida y crear la ventana modal.
+- **Tarea 4**: Añadir el botón para agregar una nueva partida.
 - **Tarea 5**: Actualizar el array `partidas` con los nuevos datos y re-renderizar la tabla.
 
 #### Control de Versiones 🗂️
@@ -253,20 +210,25 @@ modelos = {
 - Crea, en la vista `Juego`, un estado `**arrayCasillas**` e inicialízalo con un array multidimensional corresondiente a la matriz principal que tienes en modelos.
 - Inserta el componente `panel` y utiliza como prop el estado.
 
-##### **Tarea 5**: Componente `pieza.jsx`
+![image](https://github.com/user-attachments/assets/b89958b7-a273-4ce5-8f79-d2d1709e47fd)
+
+
+
+##### **Tarea 3**: Componente `pieza.jsx`
 - Crea un componente `pieza.jsx` clonando el componente panel. Este lo utilizaremos para mostrar las piezas del modelo. 
 - Insértalo en la vista `Juego` utilizando como prop alguna de las diferentes matrices de cada pieza de `modelos` y sus variantes de ángulo. Comprueba que todas las piezas se muestran correctamente.
 
-##### **Tarea 6**: Función `colorPieza()`
+##### **Tarea 4**: Función `colorPieza()`
 - Crea en la carpeta `lib` una función que recibe un número (0,1,2,3,...)
 y devuelve un texto correspondiente a los diferentes colores de fondo de bootstrap "bg-white", "bg-black", "bg-primary", "bg-secondary", etc.
 - Utiliza esta función en los componentes `panel` y `pieza` para mostrar las piezas en diferentes colores.
   
+_Componente pieza.jsx con la función colorPieza() aplicada_
+![image](https://github.com/user-attachments/assets/abf6df89-a024-4e2f-ba2a-d3d01b0079a2)
 
-![alt text](image.png)
 
 
-##### **Tarea 7**: Clase `modeloPieza`
+##### **Tarea 5**: Clase `modeloPieza`
 - Crea, en lib, la clase `modeloPieza`. Esta clase esta formada por:
   - propiedades: numero, nombre, angulo, matriz. (Todas propiedades públicas).
     - La propiedad 'numero' contiene el numero de la pieza
@@ -278,7 +240,7 @@ y devuelve un texto correspondiente a los diferentes colores de fondo de bootstr
   - método girar()
     - Este método permite sumar uno a la propiedad `angulo`, controlando que el valor solo tenga los valores 0,1,2 y 3.
 
-##### **Tarea 8**: Función `nuevaPieza()`
+##### **Tarea 6**: Función `nuevaPieza()`
 - Crea y exporta, en el archivo`lib`, la función `nuevaPieza` la cual devuelve una instancia de la clase pieza donde el número de la pieza será aleatorio y el ángulo será 0, y la fila y columna se la pasaremos al crear la instancia.
   Por ejemplo:
   ```javascript
@@ -287,19 +249,22 @@ y devuelve un texto correspondiente a los diferentes colores de fondo de bootstr
   console.log(pieza.nombre) // "L"
   console.log(pieza.angulo) // 0
   console.log(pieza.fila, pieza.columna) // 2,4
-  console.log(pieza.matriz) // [[3,0],[3,0],[3,3]]
+  console.log(pieza.matriz)  // [[2,0],[2,0],[2,2]]
+  console.log(pieza.girar()) // [[2,2,2],[2,0,0]]
   ```
    
 - En la vista `Juego`, inserta varios componentes `Pieza` donde la matriz que reciban como prop ahora corresponda a la matriz de diferentes **instancias** de la clase **modeloPieza** creadas a través de la función **nuevaPieza()**. Comprueba que se muestran piezas aleatorias.
   
-![alt text](image-1.png)
+![image](https://github.com/user-attachments/assets/0158e98e-c2d3-417b-8d4a-900a2710e486)
 
-##### **Tarea 9:**: Función `insertaNuevaPieza()`
+
+##### **Tarea 7:**: Función `insertaNuevaPieza()`
 - En la vista 'Juego', crea un estado `piezaActual` e inicialízalo con una instancia obtenida de la función `nuevaPieza()` donde la fila será 0 y la columna será un numero aleatorio.
 - Crea una función `insertaNuevaPieza()` capaz de insertar en el panel (es decir, en la fila 0 y la columna aleatoria) la matriz de la nueva pieza instanciada.
 - Crea un botón para probar la función. Al hacer click llamará a la función insertaNuevaPieza() de manera que se renderice el panel, ahora con la pieza insertada.
 
- ![alt text](image-2.png)
+![image](https://github.com/user-attachments/assets/85f74573-06c9-46b5-b69f-98387e359fa7)
+
   
 #### Control de Versiones 🗂️
 Rama: historia-usuario-4-estructura-basica
