@@ -290,7 +290,7 @@ La función iniciarMovimiento creará un intervalo automático que llamará cada
 
 - **Función controlTeclas()**: Detectar las teclas de movimiento y llamar a los métodos correspondientes.
 - **Función borrarPieza()**: Borrar la pieza actual del panel antes de cada movimiento.
-- **Funciones de movimiento**: Implementar `moverDra()`, `moverIzq()`, `bajar()` y `ModeloPieza.girar()`.
+- **Funciones de movimiento**: Implementar `moverDra()`, `moverIzq()`, `bajar()` y `girar()`.
 - **Función iniciarMovimiento()**: Gestionar el movimiento automático de las piezas.
 - **Funcion para Inicio del Juego**: Activar el juego al pulsar el botón **JUGAR**.
 - **Función hayColision()**: Comprueba si se puede mover la pieza o, si por el contrario, hay colisión con el muro u otra pieza.
@@ -298,13 +298,13 @@ La función iniciarMovimiento creará un intervalo automático que llamará cada
 #### Tareas 📌
 
 ##### **Tarea 1: Función controlTeclas()**
-  - Implementa, en `Juego`, la función `controlTeclas()` la cual debe detectar la pulsación de las teclas y, dependiendo de la flecha pulsada, debe llamar a las funciones `moverDra()`, `moverIzq()`, `bajar()` y `ModeloPieza.girar()` que, por el momento, mostrarán por consola un mensaje.
+  - Implementa, en `Juego`, la función `controlTeclas()` la cual debe detectar la pulsación de las teclas y, dependiendo de la flecha pulsada, debe llamar a las funciones `moverDra()`, `moverIzq()`, `bajar()` y `girar()` que, por el momento, mostrarán por consola un mensaje.
 - **Tarea 2**: Desarrollar la función `bajar()` la cual incrementa en 1 la posición vertical de la piezaActual y la vuelve a insertar en el panel mediante pintarPieza().
-- **Tarea 3**: Crear la función `iniciarMovimiento()` con `setInterval`. Esta función debe llamar a la función bajar() para mostrar el movimiento de la pieza.
-- **Tarea 4**: Desarrollar la función `borrarPieza(fila, columna)`.
-- **Tarea 5**: Actualizar las funciones de movimiento y giro de las piezas.
-- **Tarea 6**: Configurar el botón **JUGAR** para iniciar el juego.
-- **Tarea 7**: Implementa `hayColision()`para que las piezas se detengan.
+- **Tarea 3**: Actualizar las funciones de movimiento y giro de las piezas.
+- **Tarea 4**: Crear la función `iniciarMovimiento()` con `setInterval`. Esta función debe llamar a la función bajar() para mostrar el movimiento de la pieza. Configurar el botón **JUGAR** para iniciar el movimiento.
+- **Tarea 5**: Desarrollar la función `borrarPieza()`, la cual inserta 0 en aquellas posiciones de la pieza que tenga un número mayor de 1. Con esta función evitamos dejar estela.
+- **Tarea 6**: Implementa `hayColision()`, una función de devuelve verdadero o falso si existen coincidencia de casillas solidas en el panel para las posiciones de piezaActual o, por el contrario, se puede pintar la pieza.
+- **Tarea 7**: Actualiza las funciones de movimiento integrando la nueva función hayColision() para que, en caso de colision lateral no se mueva la pieza y, en caso de colisión al bajar se inserte una nueva pieza.
 
 #### Control de Versiones 🗂️
 
