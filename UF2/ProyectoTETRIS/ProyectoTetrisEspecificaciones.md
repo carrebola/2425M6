@@ -234,21 +234,21 @@ _Componente pieza.jsx con la función colorPieza() aplicada_
     - La propiedad 'numero' contiene el numero de la pieza
     - La propiedad 'nombre' guarda el nombre de la pieza, 
     - La propiedad 'angulo' será un número (0,1,2,3) correspondiente a los ángulos 0º, 90º, 180º,270º.
-    - La propiedad 'fila'
-    - La propiedad 'columna'
+    - La propiedad 'fila' que por defecto será 0
+    - La propiedad 'columna' que por defecto será 1
     - La propiedad 'matriz' contendrá un puntero que apuntará a al array correspondiente (según numero de pieza y angulo) de la propiedad `piezas` del objeto `modelos`.
   - método girar()
     - Este método permite sumar uno a la propiedad `angulo`, controlando que el valor solo tenga los valores 0,1,2 y 3.
 
 ##### **Tarea 6**: Función `nuevaPieza()`
-- Crea y exporta, en el archivo`lib`, la función `nuevaPieza` la cual devuelve una instancia de la clase pieza donde el número de la pieza será aleatorio y el ángulo será 0, y la fila y columna se la pasaremos al crear la instancia.
+- Crea y exporta, en el archivo`lib`, la función `nuevaPieza` la cual devuelve una instancia de la clase pieza donde el número de la pieza será aleatorio y el ángulo será 0.
   Por ejemplo:
   ```javascript
-  const pieza = nuevaPieza(2,4)
+  const pieza = nuevaPieza()
   console.log(pieza.numero) // 1 (un numero aleatorio, en este caso corresponde a la segunda pieza de modelos.piezas)
   console.log(pieza.nombre) // "L"
   console.log(pieza.angulo) // 0
-  console.log(pieza.fila, pieza.columna) // 2,4
+  console.log(pieza.fila, pieza.columna) // 0,1
   console.log(pieza.matriz)  // [[2,0],[2,0],[2,2]]
   console.log(pieza.girar()) // [[2,2,2],[2,0,0]]
   ```
@@ -259,9 +259,9 @@ _Componente pieza.jsx con la función colorPieza() aplicada_
 
 
 ##### **Tarea 7:**: Función `insertaNuevaPieza()`
-- En la vista 'Juego', crea un estado `piezaActual` e inicialízalo con una instancia obtenida de la función `nuevaPieza()` donde la fila será 0 y la columna será un numero aleatorio.
-- Crea una función `insertaNuevaPieza()` capaz de insertar en el panel (es decir, en la fila 0 y la columna aleatoria) la matriz de la nueva pieza instanciada.
-- Crea un botón para probar la función. Al hacer click llamará a la función insertaNuevaPieza() de manera que se renderice el panel, ahora con la pieza insertada.
+- En la vista 'Juego', crea un estado `piezaActual` e inicialízalo con una instancia obtenida de la función `nuevaPieza()` donde la fila será 0 y la columna será un numero aleatorio (ten en cuenta que el numero aleatório debe estar comprendido dentro del rango del panel).
+- Crea una función `pintarPieza()` capaz de insertar en el panel (es decir, en la fila 0 y la columna aleatoria) la matriz de la nueva pieza instanciada guardada en el estado piezaActual.
+- Crea un botón para probar la función. Al hacer click llamará a una función insertaNuevaPieza() la cual llamará a pintarPieza() de manera que se renderice el panel, ahora con la pieza insertada.
 
 ![image](https://github.com/user-attachments/assets/85f74573-06c9-46b5-b69f-98387e359fa7)
 
@@ -299,11 +299,12 @@ La función iniciarMovimiento creará un intervalo automático que llamará cada
 
 ##### **Tarea 1: Función controlTeclas()**
   - Implementa, en `Juego`, la función `controlTeclas()` la cual debe detectar la pulsación de las teclas y, dependiendo de la flecha pulsada, debe llamar a las funciones `moverDra()`, `moverIzq()`, `bajar()` y `ModeloPieza.girar()` que, por el momento, mostrarán por consola un mensaje.
-- **Tarea 2**: Desarrollar la función `borrarPieza(fila, columna)`.
-- **Tarea 3**: Actualizar las funciones de movimiento y giro de las piezas.
-- **Tarea 4**: Crear la función `iniciarMovimiento()` con `setInterval`.
-- **Tarea 5**: Configurar el botón **JUGAR** para iniciar el juego.
-- **Tarea 6**: Implementa `hayColision()`para que las piezas se detengan.
+- **Tarea 2**: Desarrollar la función `bajar()` la cual incrementa en 1 la posición vertical de la piezaActual y la vuelve a insertar en el panel mediante pintarPieza().
+- **Tarea 3**: Crear la función `iniciarMovimiento()` con `setInterval`. Esta función debe llamar a la función bajar() para mostrar el movimiento de la pieza.
+- **Tarea 4**: Desarrollar la función `borrarPieza(fila, columna)`.
+- **Tarea 5**: Actualizar las funciones de movimiento y giro de las piezas.
+- **Tarea 6**: Configurar el botón **JUGAR** para iniciar el juego.
+- **Tarea 7**: Implementa `hayColision()`para que las piezas se detengan.
 
 #### Control de Versiones 🗂️
 
