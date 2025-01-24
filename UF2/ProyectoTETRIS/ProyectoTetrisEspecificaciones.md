@@ -293,7 +293,6 @@ La función iniciarMovimiento creará un intervalo automático que llamará cada
 - **Funciones de movimiento**: Implementar `moverDra()`, `moverIzq()`, `bajar()` y `girar()`.
 - **Función iniciarMovimiento()**: Gestionar el movimiento automático de las piezas.
 - **Funcion para Inicio del Juego**: Activar el juego al pulsar el botón **JUGAR**.
-- **Función hayColision()**: Comprueba si se puede mover la pieza o, si por el contrario, hay colisión con el muro u otra pieza.
 
 #### Tareas 📌
 
@@ -314,8 +313,7 @@ La función iniciarMovimiento creará un intervalo automático que llamará cada
   - _Tarea 3_: `Implementa funciones de movimiento y giro`
   - _Tarea 4_: `iniciarMovimiento() con setInterval`
   - _Tarea 5_: `Implementa borrarPieza()`
-  - _Tarea 6_: `Implementa función hayColisión()`
-  - _Tarea 7_: `Actualiza funciones movimiento`
+
 - **Pull Request**: Al finalizar la historia, crear un pull request para fusionar `historia-usuario-5-control-movimientos` con `main`.
 
 ---
