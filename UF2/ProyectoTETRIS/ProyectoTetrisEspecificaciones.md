@@ -303,18 +303,19 @@ La función iniciarMovimiento creará un intervalo automático que llamará cada
 - **Tarea 3**: Actualizar las funciones de movimiento y giro de las piezas.
 - **Tarea 4**: Crear la función `iniciarMovimiento()` con `setInterval`. Esta función debe llamar a la función bajar() para mostrar el movimiento de la pieza. Configurar el botón **JUGAR** para iniciar el movimiento.
 - **Tarea 5**: Desarrollar la función `borrarPieza()`, la cual inserta 0 en aquellas posiciones de la pieza que tenga un número mayor de 1. Con esta función evitamos dejar estela.
-- **Tarea 6**: Implementa `hayColision()`, una función de devuelve verdadero o falso si existen coincidencia de casillas solidas en el panel para las posiciones de piezaActual o, por el contrario, se puede pintar la pieza.
-- **Tarea 7**: Actualiza las funciones de movimiento integrando la nueva función hayColision() para que, en caso de colision lateral no se mueva la pieza y, en caso de colisión al bajar se inserte una nueva pieza.
+
 
 #### Control de Versiones 🗂️
 
 - **Rama Git**: `historia-usuario-5-control-movimientos`
 - **Commits**:
-  - _Tarea 1_: `Implementa panel.controlTeclas() y eventos de teclado`
-  - _Tarea 2_: `Desarrolla método panel.borrarPieza()`
-  - _Tarea 3_: `Implementa métodos de movimiento y giro`
-  - _Tarea 4_: `Crea panel.iniciarMovimiento() con setInterval`
-  - _Tarea 5_: `Configura botón JUGAR para iniciar el juego`
+  - _Tarea 1_: `Implementa controlTeclas() y eventos de teclado`
+  - _Tarea 2_: `Desarrolla función bajar()`
+  - _Tarea 3_: `Implementa funciones de movimiento y giro`
+  - _Tarea 4_: `iniciarMovimiento() con setInterval`
+  - _Tarea 5_: `Implementa borrarPieza()`
+  - _Tarea 6_: `Implementa función hayColisión()`
+  - _Tarea 7_: `Actualiza funciones movimiento`
 - **Pull Request**: Al finalizar la historia, crear un pull request para fusionar `historia-usuario-5-control-movimientos` con `main`.
 
 ---
@@ -332,7 +333,7 @@ La función iniciarMovimiento creará un intervalo automático que llamará cada
 - **Guardar Partida**:
 
   - Finalizar la partida cuando la pieza llega al suelo y mostrar la opción de guardado.
-  - Utilizar el método `registraPartida()` para guardar la partida.
+  - Utilizar la función `registraPartida()` para guardar la partida.
   - Utilizar el formulario de la vista **Partidas** para recopilar la información.
   - Después de guardar, mostrar la vista de **Partidas Jugadas**.
 
@@ -368,22 +369,22 @@ La función iniciarMovimiento creará un intervalo automático que llamará cada
 
 #### Criterios de Aceptación ✅
 
-- **Tarea 1 - Bloquear Piezas**: Implementar la funcionalidad que bloquea las piezas al llegar a la posición final.
-- **Tarea 2 - Nueva Pieza**: Generar una nueva pieza cuando la actual se ha bloqueado.
-- **Tarea 3 - Colores de Piezas**: Asignar colores diferentes a las piezas para facilitar su identificación.
+- **Tarea 1 - Implementa `hayColision()`**, una función de devuelve verdadero o falso si existen coincidencia de casillas solidas en el panel para las posiciones de piezaActual o, por el contrario, se puede pintar la pieza.
+- **Tarea 2 - Actualiza las funciones de movimiento integrando la nueva función hayColision()** para que, en caso de colision lateral no se mueva la pieza y, en caso de colisión al bajar se inserte una nueva pieza.
+- **Tarea 3 - Nueva Pieza**: Generar una nueva pieza cuando la actual se ha bloqueado.
 - **Tarea 4 - Contador de Líneas y Puntos**: Añadir un contador de líneas eliminadas y puntos acumulados.
-- **Tarea 5 - Final de Partida**: Detectar el final de la partida y mostrar un mensaje informativo.
+- **Tarea 5 - Final de Partida**: Detectar el final de la partida cuando ya no pueden aparecer más piezas y mostrar un mensaje informativo.
 - **Tarea 6 - Piezas Siguientes**: Mostrar las piezas siguientes en un panel lateral.
 - **Tarea 7 - Cambio de Pieza**: Permitir intercambiar la pieza actual con la pieza guardada.
-- **Tarea 8 - Cambio de Nivel**: Incrementar el nivel después de un cierto número de líneas eliminadas.
+- **Tarea 8 - Cambio de Nivel**: Incrementar el nivel después de 5 eliminadas.
 
 #### Control de Versiones 🗂️
 
 - **Rama Git**: `historia-usuario-7-funcionalidades-avanzadas`
 - **Commits**:
-  - _Tarea 1_: `Implementa bloqueo de piezas en posición final`
-  - _Tarea 2_: `Genera nueva pieza cuando la actual se bloquea`
-  - _Tarea 3_: `Asigna colores diferentes a las piezas`
+  - _Tarea 1_: `Implementa colison de pieza
+  - _Tarea 2_: `Genera movimiento considerando colisiones`
+  - _Tarea 3_: `Genera nueva pieza cuando la actual se bloquea`
   - _Tarea 4_: `Añade contador de líneas y puntos`
   - _Tarea 5_: `Detecta final de la partida y muestra mensaje`
   - _Tarea 6_: `Muestra piezas siguientes en panel lateral`
