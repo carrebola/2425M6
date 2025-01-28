@@ -13,8 +13,9 @@
 - [x] Sesión 3 : Tutorial de Iniciación a React con Vite
 - [x] Sesión 4 : React reactivo con useState, array functions y deconstrucción
 - [x] Sesión 5: Tutorial para Configurar una Aplicación React con Vite, Bootstrap, ESLint, GitHub y Vercel
-- [ ] Sesión 6: React-router, Props y gestión de estados con Context.
-- [ ] Sesión 7: Clases
+- [x] Sesión 6: React-router, Props y gestión de estados con Context.
+- [x] Sesión 7: Clases
+- [ ] Sesión 8: Hook UseEffect
 
 ## Exercicis
   - Ejercicio 1: SPA básica con Vanilla
