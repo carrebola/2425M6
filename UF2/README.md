@@ -15,7 +15,7 @@
 - [x] Sesión 5: Tutorial para Configurar una Aplicación React con Vite, Bootstrap, ESLint, GitHub y Vercel
 - [x] Sesión 6: React-router, Props y gestión de estados con Context.
 - [x] Sesión 7: Clases
-- [ ] Sesión 8: Hook UseEffect
+- [x] Sesión 8: Hook UseEffect
 
 ## Exercicis
   - Ejercicio 1: SPA básica con Vanilla
