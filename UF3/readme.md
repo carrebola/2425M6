@@ -2,3 +2,4 @@
 ## Sessions
 - [x] Sesión 1: Persistencia en el navegador
 - [ ] Sesión 2: Eventos y formularios
+- [ ] Sesión 3: Hook useParams
